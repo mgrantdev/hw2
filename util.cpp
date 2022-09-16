@@ -15,16 +15,20 @@ std::string convToLower(std::string src)
     to a set of words based on the criteria given in the assignment **/
 std::set<std::string> parseStringToWords(string rawWords)
 {
+    std::string delims{ "'.,:;!?" };
+    std::string $word;
+    std::set<std::string> parsedWords;
 
-
-
-
-
-
-
-
-
-
+    // search until no matching delims are found
+    size_t start, pos = 0;
+    while ((start = rawWords.find_first_not_of(delims, pos)) != std::string::npos)
+    {
+        // parse by multiple delimiters
+        pos = rawWords.find_first_of(delims, start + 1);
+        $word = rawWords.substr(start, pos - start); // "cut out" portion of the string before delim
+        parsedWords.insert($word);
+    }
+    return parsedWords;
 }
 
 /**************************************************
