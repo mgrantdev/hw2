@@ -29,7 +29,7 @@ std::set<T> setIntersection(std::set<T> &s1, std::set<T> &s2)
     {
         item = *it;
         // if item also exists in set2, add to new set
-        if (s1.find(item) != s1.end() && s3.find(item) == s3.end())
+        if (s1.find(item) != s1.end())
         {
             s3.insert(item);
         }
