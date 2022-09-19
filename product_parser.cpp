@@ -4,6 +4,9 @@
 #include "book.h"
 #include "clothing.h"
 #include "movie.h"
+#include "movie.cpp"
+#include "book.cpp"
+#include "clothing.cpp"
 #include "util.h"
 using namespace std;
 
