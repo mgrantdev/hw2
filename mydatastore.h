@@ -15,7 +15,12 @@ public:
 
     }
     ~MyDataStore() { 
-
+        for(std::vector<Product*>::iterator it = products.begin(); it != products.end(); ++it) {
+            delete (*it);
+        }
+        for(std::vector<User*>::iterator it = users.begin(); it != users.end(); ++it) {
+            delete (*it);
+        }
     }
 
     /**
