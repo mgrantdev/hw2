@@ -18,6 +18,7 @@ public:
     std::string getName() const;
     void deductAmount(double amt);
     void addProductToCart(Product* product);
+    std::vector<Product*> getCart();
     virtual void dump(std::ostream& os);
 
 private:

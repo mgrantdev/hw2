@@ -20,6 +20,9 @@ void User::addProductToCart(Product* product) {
     cart.push_back(product);
 }
 
+std::vector<Product*> User::getCart() {
+    return cart;
+}
 
 std::string User::getName() const
 {

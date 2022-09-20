@@ -119,6 +119,16 @@ int main(int argc, char* argv[])
                     cout << "Invalid User" << endl;
                 }
             }
+            else if ( cmd == "VIEWCART") {
+                string username;
+                ss >> username;
+                User* user = ds.getUserByUsername(username);
+                if(user != nullptr) {
+                    ds.viewCart(user);
+                } else {
+                    cout << "Invalid User" << endl;
+                }
+            }
 
 
 

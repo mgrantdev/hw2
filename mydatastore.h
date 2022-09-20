@@ -81,6 +81,17 @@ public:
     void addToCart(User* user, Product* product) {
        user->addProductToCart(product);
     }
+
+
+    /*
+    View the given user's cart
+    */
+    void viewCart(User* user) {
+        std::vector<Product*> userCart = user->getCart();
+        for(std::vector<Product*>::iterator it = userCart.begin(); it != userCart.end(); ++it) {
+            std::cout << (*it)->displayString() << std::endl;
+        }
+    }
     
     /**
      * Reproduce the database file from the current Products and User values
