@@ -26,7 +26,9 @@ std::set<std::string> parseStringToWords(string rawWords)
         // parse by multiple delimiters
         pos = rawWords.find_first_of(delims, start + 1);
         $word = rawWords.substr(start, pos - start); // "cut out" portion of the string before delim
-        parsedWords.insert(convToLower($word));
+        if($word.size() > 1) {
+            parsedWords.insert(convToLower($word));
+        }
     }
     return parsedWords;
 }
