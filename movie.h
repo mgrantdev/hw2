@@ -27,7 +27,7 @@ public:
      * Returns a string to display the product info for hits of the search
      */
     std::string displayString() const {  
-        return name_ + "\nGenre: " +  genre_ + " Rating:" + rating_ + "\n" + std::to_string(price_) + " " + std::to_string(qty_) + " left.";
+        return name_ + "\nGenre: " +  genre_ + " Rating: " + rating_ + "\n" + std::to_string(price_) + " " + std::to_string(qty_) + " left.";
     }
 
     /**
