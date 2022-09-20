@@ -82,7 +82,6 @@ public:
        user->addProductToCart(product);
     }
 
-
     /*
     View the given user's cart
     */
@@ -92,6 +91,21 @@ public:
             std::cout << (*it)->displayString() << std::endl;
         }
     }
+
+    /*
+    Purchase the given user's cart
+    */
+    void purchaseCart(User* user) {
+        std::vector<Product*> userCart = user->getCart();
+        for(std::vector<Product*>::iterator it = userCart.begin(); it != userCart.end(); ++it) {
+            Product* p = (*it);
+            if(user->getBalance() > p->getPrice() && p->getQty() > 0) {
+                user->deductAmount(p->getPrice());
+                p->subtractQty(1);
+            }
+        }
+    }
+    
     
     /**
      * Reproduce the database file from the current Products and User values

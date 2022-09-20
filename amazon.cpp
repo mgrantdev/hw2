@@ -109,14 +109,14 @@ int main(int argc, char* argv[])
 
                     // validate results
                     if(hits.size() == 0) {
-                        cout << "No results found" << endl;
+                        cout << "Invalid request" << endl;
                     } else if(search_result_index < 0 || search_result_index >= (int)hits.size()) {
-                        cout << "Invalid product index" << endl;
+                        cout << "Invalid request" << endl;
                     } else {
                         ds.addToCart(user, hits[search_result_index]);
                     }
                 } else {
-                    cout << "Invalid User" << endl;
+                    cout << "Invalid request" << endl;
                 }
             }
             else if ( cmd == "VIEWCART") {
@@ -125,6 +125,16 @@ int main(int argc, char* argv[])
                 User* user = ds.getUserByUsername(username);
                 if(user != nullptr) {
                     ds.viewCart(user);
+                } else {
+                    cout << "Invalid username" << endl;
+                }
+            }
+            else if ( cmd == "BUYCART") {
+                string username;
+                ss >> username;
+                User* user = ds.getUserByUsername(username);
+                if(user != nullptr) {
+                    ds.purchaseCart(user);
                 } else {
                     cout << "Invalid User" << endl;
                 }
