@@ -48,7 +48,15 @@ public:
 
          for(std::vector<Product*>::iterator it = products.begin(); it != products.end(); ++it) {
             std::set<std::string> keywords = (*it)->keywords();
-            if((setIntersection(keywords, termsSet).size() > 0 && type == 0) || (setUnion(keywords, termsSet).size() > 0 && type == 1)) {
+
+            // AND search
+            if(type == 0 && setIntersection(keywords, termsSet).size() >= termsSet.size()) {
+                results.push_back((*it));
+            }
+            
+            // OR search
+            if(type == 1 && setIntersection(keywords, termsSet).size() > 0) {
+                // OR search
                 results.push_back((*it));
             }
         }
