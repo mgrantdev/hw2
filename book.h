@@ -31,7 +31,7 @@ public:
      * Returns a string to display the product info for hits of the search
      */
     std::string displayString() const {
-        return " $" + (std::to_string(price_)) + " | " + name_ + " | " + author_ + " | Qty " + std::to_string(qty_);
+         return name_ + "\nAuthor: " +  author_ + " ISBN:" + ISBN_ + "\n" + std::to_string(price_) + " " + std::to_string(qty_) + " left.";
     }
 
     /**
