@@ -99,7 +99,26 @@ int main(int argc, char* argv[])
                 done = true;
             }
 	    /* Add support for other commands here */
+            else if ( cmd == "ADD") {
+                string username;
+                ss >> username;
+                int search_result_index;
+                ss >> search_result_index;
+                User* user = ds.getUserByUsername(username);
+                if(user != nullptr) {
 
+                    // validate results
+                    if(hits.size() == 0) {
+                        cout << "No results found" << endl;
+                    } else if(search_result_index < 0 || search_result_index >= (int)hits.size()) {
+                        cout << "Invalid product index" << endl;
+                    } else {
+                        ds.addToCart(user, hits[search_result_index]);
+                    }
+                } else {
+                    cout << "Invalid User" << endl;
+                }
+            }
 
 
 

@@ -16,6 +16,10 @@ User::~User()
 
 }
 
+void User::addProductToCart(Product* product) {
+    cart.push_back(product);
+}
+
 
 std::string User::getName() const
 {

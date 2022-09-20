@@ -17,6 +17,7 @@ public:
     double getBalance() const;
     std::string getName() const;
     void deductAmount(double amt);
+    void addProductToCart(Product* product);
     virtual void dump(std::ostream& os);
 
 private:

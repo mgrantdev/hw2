@@ -63,6 +63,25 @@ public:
         return results;
     }
 
+    /*
+    Retrieve user by their username
+    */
+    User* getUserByUsername(std::string username) {
+        for(std::vector<User*>::iterator it = users.begin(); it != users.end(); ++it) {
+            if((*it)->getName() == username) {
+                return (*it);
+            }
+        }
+        return nullptr;
+    }
+
+    /*
+    Add a product to the given user's cart
+    */
+    void addToCart(User* user, Product* product) {
+       user->addProductToCart(product);
+    }
+    
     /**
      * Reproduce the database file from the current Products and User values
      */
