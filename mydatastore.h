@@ -111,9 +111,16 @@ public:
      * Reproduce the database file from the current Products and User values
      */
     void dump(std::ostream& ofile) {
+        ofile << "<products>" << std::endl;
         for(std::vector<Product*>::iterator it = products.begin(); it != products.end(); ++it) {
             (*it)->dump(ofile);
         }
+        ofile << "</products>" << std::endl;
+        ofile << "<users>" << std::endl;
+        for(std::vector<User*>::iterator it = users.begin(); it != users.end(); ++it) {
+            (*it)->dump(ofile);
+        }
+        ofile << "</users>" << std::endl;
     }
 
     protected:
