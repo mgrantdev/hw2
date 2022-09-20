@@ -18,7 +18,7 @@ clothing.o: clothing.cpp clothing.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c clothing.cpp
 movie.o: movie.cpp movie.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c movie.cpp
-user.o: user.cpp user.h 
+user.o: user.cpp user.h product.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c user.cpp
 db_parser.o: db_parser.cpp db_parser.h product.h product_parser.h user.h datastore.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c db_parser.cpp
