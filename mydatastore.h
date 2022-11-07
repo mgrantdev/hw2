@@ -84,7 +84,7 @@ public:
     Add a product to the given user's cart
     */
     void addToCart(User* user, Product* product) {
-       user->addProductToCart(product);
+        if(user->getBalance() >= product->getPrice()) user->addProductToCart(product);
     }
 
     /*
