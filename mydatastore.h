@@ -104,7 +104,7 @@ public:
         std::vector<Product*> userCart = user->getCart();
         for(std::vector<Product*>::iterator it = userCart.begin(); it != userCart.end(); ++it) {
             Product* p = (*it);
-            if(user->getBalance() > p->getPrice() && p->getQty() > 0) {
+            if(user->getBalance() >= p->getPrice() && p->getQty() > 0) {
                 user->deductAmount(p->getPrice());
                 p->subtractQty(1);
             }
