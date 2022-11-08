@@ -110,10 +110,10 @@ int main(int argc, char* argv[])
                     // validate results
                     if(hits.size() == 0) {
                         cout << "Invalid request" << endl;
-                    } else if(search_result_index < 0 || search_result_index >= (int)hits.size()) {
+                    } else if(search_result_index < 1 || search_result_index > (int)hits.size()) {
                         cout << "Invalid request" << endl;
                     } else {
-                        ds.addToCart(user, hits[search_result_index]);
+                        ds.addToCart(user, hits[search_result_index-1]);
                     }
                 } else {
                     cout << "Invalid request" << endl;
