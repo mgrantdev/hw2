@@ -42,6 +42,6 @@ void User::deductAmount(double amt)
 void User::dump(std::ostream& os)
 {
     os.precision(2);
-    std::fixed;
+    os.setf(std::ios::fixed, std::ios::floatfield);
     os << name_ << " "  << balance_ << " " << type_ << endl;
 }
